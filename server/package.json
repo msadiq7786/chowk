@@ -1,0 +1,47 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "check": "biome check --write ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@better-auth/mongo-adapter": "^1.7.3",
+    "@types/cors": "^2.8.19",
+    "@types/morgan": "^1.9.10",
+    "better-auth": "^1.7.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "esbuild": "^0.28.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.0",
+    "helmet": "^8.3.0",
+    "inngest": "^4.20.0",
+    "module-alias": "^2.3.4",
+    "mongodb": "^7.6.0",
+    "mongoose": "^9.9.5",
+    "morgan": "^1.12.0",
+    "resend": "^6.26.0",
+    "undici-types": "^8.10.2",
+    "winston": "^3.19.0",
+    "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.12",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.4.1",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  }
+}
