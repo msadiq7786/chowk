@@ -36,13 +36,13 @@ export const auth = betterAuth({
       role: {
         type: "string",
         input: false,
+        default: null,
       },
     },
   },
 
   plugins: [
     admin({
-      defaultRole: "user",
       adminRoles: ["admin"],
       adminUserIds: env.ADMIN_IDS,
     }),
