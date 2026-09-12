@@ -23,6 +23,9 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
   },
+  advanced: {
+    disableOriginCheck: env.NODE_ENV === "development",
+  },
 
   socialProviders: {
     google: {

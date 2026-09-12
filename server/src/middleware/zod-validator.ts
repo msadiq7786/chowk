@@ -4,11 +4,13 @@ import { z, ZodError } from "zod";
 export function validateData(schema: z.ZodType) {
   return (req: Request, res: Response, next: NextFunction) => {
     try {
-      schema.parse({
+      const parsedData = schema.parse({
         body: req.body,
         params: req.params,
         query: req.query,
-      });
+      }) as { body: Request["body"] };
+
+      req.body = parsedData.body;
 
       next();
     } catch (error) {
