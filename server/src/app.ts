@@ -9,8 +9,14 @@ import { logger } from "./utils/logger.js";
 import { errorHandler } from "./middleware/error.middleware.js";
 import { auth } from "./api/auth/better-auth.js";
 import { apiRouter } from "./api/index.js";
+import { createServer } from "http";
+import { initSocket } from "./socket/index.js";
 
 export const app = express();
+const httpServer = createServer(app);
+
+// SOCKET.IO Init
+initSocket(httpServer);
 
 app.set("trust proxy", 1);
 
